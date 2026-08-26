@@ -10,7 +10,7 @@ The page loads `data.json` with JavaScript, so it should be opened through a loc
 python3 -m http.server 8000
 ```
 
-Open http://localhost:8000 in your browser.
+Open `http://localhost:8000 in your browser.`
 
 ## Project files
 
