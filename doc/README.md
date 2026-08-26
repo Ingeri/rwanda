@@ -66,7 +66,7 @@ API base URL: `http://127.0.0.1:8080/api`
 | GET    | `/api/sectors?district_id={id}`   | Return sectors for a district.                         |
 | GET    | `/api/cells?sector_id={id}`       | Return cells for a sector.                             |
 | GET    | `/api/villages?cell_id={id}`      | Return villages for a cell.                            |
-| POST   | `/api/contact`                    | Validate and save a contact message in MySQL.          |
+| POST   | `/api/contact.php`                | Validate and save a contact message in MySQL.          |
 
 Use the `id` returned by one request as the parent ID for the next request. Collection responses contain `data` and `count`; child responses also contain the requested parent ID. Each item contains `id` and `name`, and child items contain `parent_id`.
 
@@ -100,7 +100,7 @@ Example response from `GET /api/provinces`:
 The homepage form uses this same JSON request:
 
 ```bash
-curl -X POST "$BASE/contact" \
+curl -X POST "$BASE/contact.php" \
   -H 'Content-Type: application/json' \
   -d '{"name":"Jane Doe","email":"jane@example.com","message":"Hello"}'
 ```
@@ -116,7 +116,7 @@ Name, a valid email address, and message are required. Name is limited to 100 ch
 JavaScript example:
 
 ```js
-const response = await fetch("/api/contact", {
+const response = await fetch("/api/contact.php", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
@@ -159,4 +159,4 @@ Tested August 27, 2026 with PHP's built-in server at `127.0.0.1:8080`:
 | `GET /api/villages?cell_id=1`      | HTTP `200`, 9 villages                 |
 | `GET /api/districts`               | HTTP `400`, parent ID validation works |
 
-The contact POST was not written during testing because it requires the contact table and would create a real database message.
+`POST /api/contact.php` was also tested through the homepage with valid sample data and returned HTTP `201` with the success message. This test created one contact row in the database.

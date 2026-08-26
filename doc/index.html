@@ -3,22 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Developer documentation for the Rwanda Administrative API." />
+    <meta
+      name="description"
+      content="Developer documentation for the Rwanda Administrative API."
+    />
     <title>Rwanda Administrative API | Documentation</title>
     <link rel="stylesheet" href="docs.css" />
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="../index.html"><span class="brand-mark">R</span><span><strong>Rwanda</strong><small>Administrative API</small></span></a>
-      <a class="back-link" href="../index.html">Back to navigator <span aria-hidden="true">↗</span></a>
+      <a class="brand" href="../index.html"
+        ><span class="brand-mark">R</span
+        ><span
+          ><strong>Rwanda</strong><small>Administrative API</small></span
+        ></a
+      >
+      <a class="back-link" href="../index.html"
+        >Back to navigator <span aria-hidden="true">↗</span></a
+      >
     </header>
 
     <main>
       <section class="hero">
         <p class="eyebrow">Developer documentation / v1.0.0</p>
         <h1>Use Rwanda's<br /><em>administrative data.</em></h1>
-        <p class="hero-copy">A simple REST API for finding provinces, districts, sectors, cells, villages, and sending contact messages from your own application.</p>
-        <div class="base-url"><span>Public API base URL</span><code>https://rwanda.rf.gd/api</code><button type="button" id="copy-url">Copy URL</button></div>
+        <p class="hero-copy">
+          A simple REST API for finding provinces, districts, sectors, cells,
+          villages, and sending contact messages from your own application.
+        </p>
+        <div class="base-url">
+          <span>Public API base URL</span><code>https://rwanda.rf.gd/api</code
+          ><button type="button" id="copy-url">Copy URL</button>
+        </div>
       </section>
 
       <section class="content-grid">
@@ -36,30 +52,123 @@
           <section id="how-it-works" class="doc-section">
             <p class="eyebrow">01 / How it works</p>
             <h2>Follow the administrative path.</h2>
-            <p>Start with all provinces. Each result includes an <code>id</code>. Send that ID to the next endpoint to get its children. Continue until you reach the villages inside a cell.</p>
+            <p>
+              Start with all provinces. Each result includes an <code>id</code>.
+              Send that ID to the next endpoint to get its children. Continue
+              until you reach the villages inside a cell.
+            </p>
             <div class="flow" aria-label="API hierarchy flow">
-              <span>Province</span><b>→</b><span>District</span><b>→</b><span>Sector</span><b>→</b><span>Cell</span><b>→</b><span>Village</span>
+              <span>Province</span><b>→</b><span>District</span><b>→</b
+              ><span>Sector</span><b>→</b><span>Cell</span><b>→</b
+              ><span>Village</span>
             </div>
-            <p class="note"><strong>Important:</strong> use the public URL below in your application. The local URL in the README is only for running the project on your computer.</p>
+            <p class="note">
+              <strong>Important:</strong> use the public URL below in your
+              application. The local URL in the README is only for running the
+              project on your computer.
+            </p>
           </section>
 
           <section id="endpoints" class="doc-section">
             <p class="eyebrow">02 / Endpoints</p>
             <h2>Choose the data you need.</h2>
             <div class="endpoint-list">
-              <article class="endpoint"><div class="endpoint-top"><span class="method get">GET</span><code>/provinces</code></div><p>Returns all five provinces. Start here to obtain a province ID.</p><a href="https://rwanda.rf.gd/api/provinces" target="_blank" rel="noopener noreferrer">Open endpoint ↗</a></article>
-              <article class="endpoint"><div class="endpoint-top"><span class="method get">GET</span><code>/districts?province_id=1</code></div><p>Returns districts belonging to province ID <code>1</code>.</p><a href="https://rwanda.rf.gd/api/districts?province_id=1" target="_blank" rel="noopener noreferrer">Open endpoint ↗</a></article>
-              <article class="endpoint"><div class="endpoint-top"><span class="method get">GET</span><code>/sectors?district_id=1</code></div><p>Returns sectors belonging to district ID <code>1</code>.</p><a href="https://rwanda.rf.gd/api/sectors?district_id=1" target="_blank" rel="noopener noreferrer">Open endpoint ↗</a></article>
-              <article class="endpoint"><div class="endpoint-top"><span class="method get">GET</span><code>/cells?sector_id=1</code></div><p>Returns cells belonging to sector ID <code>1</code>.</p><a href="https://rwanda.rf.gd/api/cells?sector_id=1" target="_blank" rel="noopener noreferrer">Open endpoint ↗</a></article>
-              <article class="endpoint"><div class="endpoint-top"><span class="method get">GET</span><code>/villages?cell_id=1</code></div><p>Returns villages belonging to cell ID <code>1</code>.</p><a href="https://rwanda.rf.gd/api/villages?cell_id=1" target="_blank" rel="noopener noreferrer">Open endpoint ↗</a></article>
-              <article class="endpoint"><div class="endpoint-top"><span class="method get">GET</span><code>/health</code></div><p>Returns API name, version, and <code>status: ok</code> when the service is available.</p><a href="https://rwanda.rf.gd/api/health" target="_blank" rel="noopener noreferrer">Open endpoint ↗</a></article>
+              <article class="endpoint">
+                <div class="endpoint-top">
+                  <span class="method get">GET</span><code>/provinces</code>
+                </div>
+                <p>
+                  Returns all five provinces. Start here to obtain a province
+                  ID.
+                </p>
+                <a
+                  href="https://rwanda.rf.gd/api/provinces"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Open endpoint ↗</a
+                >
+              </article>
+              <article class="endpoint">
+                <div class="endpoint-top">
+                  <span class="method get">GET</span
+                  ><code>/districts?province_id=1</code>
+                </div>
+                <p>
+                  Returns districts belonging to province ID <code>1</code>.
+                </p>
+                <a
+                  href="https://rwanda.rf.gd/api/districts?province_id=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Open endpoint ↗</a
+                >
+              </article>
+              <article class="endpoint">
+                <div class="endpoint-top">
+                  <span class="method get">GET</span
+                  ><code>/sectors?district_id=1</code>
+                </div>
+                <p>Returns sectors belonging to district ID <code>1</code>.</p>
+                <a
+                  href="https://rwanda.rf.gd/api/sectors?district_id=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Open endpoint ↗</a
+                >
+              </article>
+              <article class="endpoint">
+                <div class="endpoint-top">
+                  <span class="method get">GET</span
+                  ><code>/cells?sector_id=1</code>
+                </div>
+                <p>Returns cells belonging to sector ID <code>1</code>.</p>
+                <a
+                  href="https://rwanda.rf.gd/api/cells?sector_id=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Open endpoint ↗</a
+                >
+              </article>
+              <article class="endpoint">
+                <div class="endpoint-top">
+                  <span class="method get">GET</span
+                  ><code>/villages?cell_id=1</code>
+                </div>
+                <p>Returns villages belonging to cell ID <code>1</code>.</p>
+                <a
+                  href="https://rwanda.rf.gd/api/villages?cell_id=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Open endpoint ↗</a
+                >
+              </article>
+              <article class="endpoint">
+                <div class="endpoint-top">
+                  <span class="method get">GET</span><code>/health</code>
+                </div>
+                <p>
+                  Returns API name, version, and <code>status: ok</code> when
+                  the service is available.
+                </p>
+                <a
+                  href="https://rwanda.rf.gd/api/health"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Open endpoint ↗</a
+                >
+              </article>
             </div>
           </section>
 
           <section id="responses" class="doc-section">
             <p class="eyebrow">03 / Responses</p>
             <h2>Predictable JSON output.</h2>
-            <p>Collection endpoints return a <code>data</code> array and a <code>count</code>. Child records also show <code>parent_id</code>, so your application can keep the relationship clear.</p>
+            <p>
+              Collection endpoints return a <code>data</code> array and a
+              <code>count</code>. Child records also show
+              <code>parent_id</code>, so your application can keep the
+              relationship clear.
+            </p>
             <pre><code>{
   "data": [
     { "id": 1, "name": "East" },
@@ -67,14 +176,22 @@
   ],
   "count": 5
 }</code></pre>
-            <p>For example, the tested public path is East (province <code>1</code>) → Bugesera (district <code>1</code>) → Gashora (sector <code>1</code>) → Biryogo (cell <code>1</code>).</p>
+            <p>
+              For example, the tested public path is East (province
+              <code>1</code>) → Bugesera (district <code>1</code>) → Gashora
+              (sector <code>1</code>) → Biryogo (cell <code>1</code>).
+            </p>
           </section>
 
           <section id="contact" class="doc-section">
             <p class="eyebrow">04 / Contact messages</p>
             <h2>Send JSON with POST.</h2>
-            <p>The homepage contact form uses this endpoint. Your app can use it too. A name, valid email, and message are required; the message is saved in the MySQL <code>contact_messages</code> table.</p>
-            <pre><code>fetch("https://rwanda.rf.gd/api/contact", {
+            <p>
+              The homepage contact form uses this endpoint. Your app can use it
+              too. A name, valid email, and message are required; the message is
+              saved in the MySQL <code>contact_messages</code> table.
+            </p>
+            <pre><code>fetch("https://rwanda.rf.gd/api/contact.php", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
@@ -83,27 +200,47 @@
     message: "Hello from my application"
   })
 });</code></pre>
-            <div class="success"><strong>Successful output / HTTP 201</strong><code>{ "message": "Thank you. Your message has been received." }</code></div>
+            <div class="success">
+              <strong>Successful output / HTTP 201</strong
+              ><code
+                >{ "message": "Thank you. Your message has been received."
+                }</code
+              >
+            </div>
           </section>
 
           <section id="errors" class="doc-section">
             <p class="eyebrow">05 / Errors</p>
             <h2>Clear feedback when something is wrong.</h2>
-            <p>When a request fails, the API returns JSON with an appropriate HTTP status code:</p>
+            <p>
+              When a request fails, the API returns JSON with an appropriate
+              HTTP status code:
+            </p>
             <pre><code>{ "error": { "message": "A positive integer province_id is required." } }</code></pre>
-            <div class="status-list"><span><b>200</b> Successful request</span><span><b>201</b> Contact created</span><span><b>400</b> Invalid input</span><span><b>404</b> Endpoint not found</span><span><b>503</b> Database unavailable</span></div>
+            <div class="status-list">
+              <span><b>200</b> Successful request</span
+              ><span><b>201</b> Contact created</span
+              ><span><b>400</b> Invalid input</span
+              ><span><b>404</b> Endpoint not found</span
+              ><span><b>503</b> Database unavailable</span>
+            </div>
           </section>
         </div>
       </section>
     </main>
 
-    <footer><span>Rwanda Administrative Navigator</span><span>Documentation source: <a href="README.md">README.md</a></span></footer>
+    <footer>
+      <span>Rwanda Administrative Navigator</span
+      ><span>Documentation source: <a href="README.md">README.md</a></span>
+    </footer>
     <script>
       const copyButton = document.getElementById("copy-url");
       copyButton.addEventListener("click", async () => {
         await navigator.clipboard.writeText("https://rwanda.rf.gd/api");
         copyButton.textContent = "Copied";
-        setTimeout(() => { copyButton.textContent = "Copy URL"; }, 1600);
+        setTimeout(() => {
+          copyButton.textContent = "Copy URL";
+        }, 1600);
       });
     </script>
   </body>

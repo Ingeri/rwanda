@@ -114,7 +114,10 @@ function contact(): never
 }
 
 $path = trim(parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH), '/');
-$path = preg_replace('#^api/?#', '', $path);
+$apiPosition = strpos($path, 'api/');
+$path = $apiPosition === false ? $path : substr($path, $apiPosition + 4);
+$path = preg_replace('/\.php$/', '', $path);
+$path = $_GET['endpoint'] ?? $path;
 $method = $_SERVER['REQUEST_METHOD'];
 
 if ($method === 'POST' && $path === 'contact') {
