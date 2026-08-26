@@ -26,20 +26,29 @@
         <div class="sidebar-rule"></div>
         <p class="eyebrow">Explore the country</p>
         <nav class="side-nav" aria-label="Main navigation">
-          <a class="active" href="#navigator"
+          <a
+            class="active"
+            href="#navigator"
+            data-section="navigator"
+            aria-current="page"
             ><span class="nav-icon">⌖</span>Location navigator</a
           >
-          <a href="#about"
+          <a href="#about" data-section="about"
             ><span class="nav-icon">i</span>About this directory</a
           >
-          <a href="#contact"><span class="nav-icon">@</span>Contact</a>
+          <a href="doc/" class="documentation-link"
+            ><span class="nav-icon">D</span>Documentation</a
+          >
+          <a href="#contact" data-section="contact"
+            ><span class="nav-icon">@</span>Contact</a
+          >
         </nav>
         <div class="sidebar-footer">
           <span class="status-dot"></span>Local directory connected
         </div>
       </aside>
 
-      <main class="content" id="navigator">
+      <main class="content">
         <header class="topbar">
           <span>Republic of Rwanda</span
           ><span class="topbar-date">Administrative directory / 2026</span>
@@ -58,7 +67,11 @@
           </div>
         </section>
 
-        <section class="navigator-panel" aria-labelledby="navigator-title">
+        <section
+          class="navigator-panel"
+          id="navigator"
+          aria-labelledby="navigator-title"
+        >
           <div class="panel-heading">
             <div>
               <p class="eyebrow">01 / Navigate</p>

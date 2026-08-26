@@ -5,7 +5,39 @@ const selects = Object.fromEntries(
 const resultText = document.getElementById("selection-text");
 const contactForm = document.getElementById("contact-form");
 const formStatus = document.getElementById("form-status");
+const sectionLinks = [...document.querySelectorAll("[data-section]")];
+const trackedSections = sectionLinks
+  .map((link) => document.getElementById(link.dataset.section))
+  .filter(Boolean);
 let directory = {};
+
+function setActiveSection(sectionId) {
+  sectionLinks.forEach((link) => {
+    const isActive = link.dataset.section === sectionId;
+    link.classList.toggle("active", isActive);
+    if (isActive) link.setAttribute("aria-current", "page");
+    else link.removeAttribute("aria-current");
+  });
+}
+
+sectionLinks.forEach((link) => {
+  link.addEventListener("click", () => setActiveSection(link.dataset.section));
+});
+
+if (trackedSections.length) {
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      const visibleSection = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort(
+          (first, second) => second.intersectionRatio - first.intersectionRatio,
+        )[0];
+      if (visibleSection) setActiveSection(visibleSection.target.id);
+    },
+    { root: document.querySelector(".content"), threshold: [0.2, 0.5, 0.8] },
+  );
+  trackedSections.forEach((section) => sectionObserver.observe(section));
+}
 
 function setOptions(select, names, label) {
   select.innerHTML = `<option value="">${label}</option>`;

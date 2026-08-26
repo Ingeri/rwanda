@@ -6,6 +6,11 @@ if (str_starts_with($path, '/api')) {
     exit;
 }
 
+if ($path === '/doc' || $path === '/doc/') {
+    require __DIR__ . '/../doc/index.html';
+    exit;
+}
+
 $file = __DIR__ . '/..' . $path;
 if ($path !== '/' && is_file($file)) {
     return false;
