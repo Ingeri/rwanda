@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rwanda Administrative Navigator</title>
+    <link rel="stylesheet" href="index.css" />
+
+    <!-- favicon -->
+     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="index.html" aria-label="Rwanda Administrative Navigator home">
+          <span class="brand-mark">R</span>
+          <span><strong>Rwanda</strong><small>Administrative navigator</small></span>
+        </a>
+        <div class="sidebar-rule"></div>
+        <p class="eyebrow">Explore the country</p>
+        <nav class="side-nav" aria-label="Main navigation">
+          <a class="active" href="#navigator"><span class="nav-icon">⌖</span>Location navigator</a>
+          <a href="#about"><span class="nav-icon">i</span>About this directory</a>
+        </nav>
+        <div class="sidebar-footer"><span class="status-dot"></span>Local directory connected</div>
+      </aside>
+
+      <main class="content" id="navigator">
+        <header class="topbar"><span>Republic of Rwanda</span><span class="topbar-date">Administrative directory / 2026</span></header>
+        <section class="intro">
+          <div><p class="eyebrow accent">LOCATION DIRECTORY</p><h1>Find your place<br><em>in Rwanda.</em></h1><p class="lede">Move through Rwanda's administrative structure, from province to the smallest local community.</p></div>
+          <div class="compass" aria-hidden="true"><span>N</span><i></i><b></b><span>S</span></div>
+        </section>
+
+        <section class="navigator-panel" aria-labelledby="navigator-title">
+          <div class="panel-heading"><div><p class="eyebrow">01 / Navigate</p><h2 id="navigator-title">Select an administrative area</h2></div><span class="level-count">5 levels</span></div>
+          <div class="selectors">
+            <div class="field"><label for="province">Province</label><select id="province"><option value="">Choose a province</option></select></div>
+            <div class="field"><label for="district">District</label><select id="district" disabled><option value="">Choose a district</option></select></div>
+            <div class="field"><label for="sector">Sector</label><select id="sector" disabled><option value="">Choose a sector</option></select></div>
+            <div class="field"><label for="cell">Cell</label><select id="cell" disabled><option value="">Choose a cell</option></select></div>
+            <div class="field"><label for="village">Village</label><select id="village" disabled><option value="">Choose a village</option></select></div>
+          </div>
+          <div class="selection-result" id="selection-result"><span class="result-marker">+</span><span id="selection-text">Your selected location will appear here.</span></div>
+        </section>
+
+        <section class="directory-info" id="about"><div><p class="eyebrow accent">02 / About the structure</p><h2>Five levels.<br><em>One clear path.</em></h2></div><p>Rwanda is organised into provinces, districts, sectors, cells and villages. This directory follows that official administrative path so you can locate a community with precision.</p></section>
+        <footer><span>Built for clear local discovery.</span><span>Data source: data.json</span></footer>
+      </main>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
