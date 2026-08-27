@@ -383,3 +383,14 @@ footer {
         line-height: 2;
     }
 }
+
+@media (max-width: 420px) {
+    .hero h1 {
+        font-size: 44px;
+    }
+
+    .doc-section pre {
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+    }
+}
